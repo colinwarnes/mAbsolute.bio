@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mAbsolute — Broadly Neutralizing Antibody Solution</title>
-<meta name="description" content="mAbsolute is engineering a polyclonal cocktail antibody designed for broad neutralization across a family of viruses.">
+<title>mAbsolute — Pan-Flavivirus Antibody Solution</title>
+<meta name="description" content="mAbsolute is engineering a monoclonal antibody designed for broad neutralization across the flavivirus family.">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <style>
   :root {
@@ -233,6 +233,73 @@
 
   .stat-card .label { font-size: 0.9rem; opacity: 0.7; }
 
+  /* ---------- Pipeline ---------- */
+  .pipeline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .pipe-card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px;
+    background: var(--paper);
+  }
+
+  .pipe-card .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-bottom: 18px;
+  }
+
+  .pipe-card:nth-child(1) .dot { background: var(--navy); }
+  .pipe-card:nth-child(2) .dot { background: var(--sage); }
+  .pipe-card:nth-child(3) .dot { background: var(--coral); }
+
+  .pipe-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+  .pipe-card p { font-size: 0.95rem; opacity: 0.78; }
+
+  .placeholder-note {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    padding: 16px 20px;
+    background: rgba(255, 216, 84, 0.25);
+    border-left: 3px solid var(--rust);
+    border-radius: 4px;
+    opacity: 0.85;
+  }
+
+  /* ---------- Team ---------- */
+  .team { background: var(--paper-dim); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .team-card {
+    background: var(--paper);
+    border-radius: 14px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    text-align: left;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky), var(--sage));
+    margin-bottom: 16px;
+  }
+
+  .team-card h3 { font-size: 1.05rem; margin-bottom: 2px; }
+  .team-card .role { font-size: 0.85rem; color: var(--rust); font-weight: 600; margin-bottom: 10px; }
+  .team-card p { font-size: 0.9rem; opacity: 0.75; }
+
   /* ---------- Contact ---------- */
   .contact-box {
     background: var(--navy);
@@ -296,10 +363,12 @@
   <section class="hero">
     <div class="wrap">
       <span class="eyebrow">Biotechnology · Antibody Therapeutics</span>
-      <h1>A polyclonal antibody cocktail solution.</h1>
+      <h1>A pan-flavivirus antibody solution.</h1>
       <p class="lede">
-        mAbsolute is developing a polyclonal antibody cocktail engineered to
-        neutralize an infectious disease family - stay tuned!
+        mAbsolute is developing a monoclonal antibody engineered to
+        neutralize across the flavivirus family — including dengue, Zika,
+        West Nile, and yellow fever — with the precision, rigor, and speed
+        the threat demands.
       </p>
       <div class="btn-row">
         <a href="#contact" class="btn btn-primary">Get in touch</a>
@@ -311,12 +380,17 @@
   <section class="mission" id="mission">
     <div class="wrap">
       <div class="section-label">Our mission</div>
-      <h2>One therapeutic, engineered against an entire viral family.</h2>
+      <h2>One antibody, engineered against an entire viral family.</h2>
       <div class="mission-grid">
         <div>
           <p>
             <!-- Replace/expand with your real mission statement -->
-            Stay tuned for scientific updates :).
+            Flaviviruses — dengue, Zika, West Nile, yellow fever, and their
+            relatives — infect hundreds of millions of people every year, yet
+            most antibody approaches are built to fight just one of them at a
+            time. mAbsolute is engineering a monoclonal antibody designed to
+            neutralize broadly across the flavivirus family, so protection
+            doesn't depend on guessing which virus shows up next.
           </p>
           <p>
             We're early — and building deliberately. This page will grow as
@@ -330,8 +404,71 @@
           </div>
           <div class="stat-card">
             <span class="num">1</span>
-            <span class="label">Antibody program in development</span>
+            <span class="label">Pan-flavivirus program in development</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pipeline" id="pipeline">
+    <div class="wrap">
+      <div class="section-label">Pipeline</div>
+      <h2>Our therapeutic focus</h2>
+      <p class="section-intro">
+        Our lead program is a monoclonal antibody candidate designed for
+        broad neutralization across flaviviruses. Program specifics will be
+        shared here as the work progresses.
+      </p>
+      <div class="pipeline-grid">
+        <div class="pipe-card">
+          <div class="dot"></div>
+          <h3>Discovery</h3>
+          <p>Identifying and validating antibody candidates with cross-flavivirus neutralization.</p>
+        </div>
+        <div class="pipe-card">
+          <div class="dot"></div>
+          <h3>Preclinical</h3>
+          <p>Lead optimization and translational studies to follow discovery.</p>
+        </div>
+        <div class="pipe-card">
+          <div class="dot"></div>
+          <h3>Clinical</h3>
+          <p>Longer-term milestone as the program advances toward the clinic.</p>
+        </div>
+      </div>
+      <div class="placeholder-note">
+        Placeholder content — swap this section for your real target details, mechanism, and program stage once you're ready to share them publicly.
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="wrap">
+      <div class="section-label">Team</div>
+      <h2>Building the founding team</h2>
+      <p class="section-intro">
+        Replace these cards with your real founders and early team members —
+        name, role, and a one-line background works well for a page this size.
+      </p>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar"></div>
+          <h3>[Founder Name]</h3>
+          <div class="role">[Title]</div>
+          <p>One line on background — prior company, research focus, or expertise.</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar"></div>
+          <h3>[Name]</h3>
+          <div class="role">[Title]</div>
+          <p>One line on background — prior company, research focus, or expertise.</p>
+        </div>
+        <div class="team-card">
+          <div class="avatar"></div>
+          <h3>[Name]</h3>
+          <div class="role">[Title]</div>
+          <p>One line on background — prior company, research focus, or expertise.</p>
         </div>
       </div>
     </div>
