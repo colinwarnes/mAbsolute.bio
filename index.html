@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>mAbsolute — Antibody Therapeutics</title>
-<meta name="description" content="mAbsolute is developing a antibody solution engineered to neutralize neutralize an entire viral family.">
-<link rel="icon" type="image/png" href="assets/logo.png">
+<meta name="description" content="mAbsolute is developing an antibody solution engineered to neutralize an entire viral family.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#FFD854">
 <style>
   :root {
     --navy: #274392;
@@ -204,11 +207,33 @@
   /* ---------- Mission ---------- */
   .mission { background: var(--paper-dim); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
-  .mission-grid {
-    max-width: 68ch;
+  /* Roomier band: this is the one section that is mostly prose. */
+  .mission { padding: 112px 0; }
+
+  /* The mission h2 is a full statement, not a short display headline, so it
+     overrides the narrow 20ch cap, steps down in size, and runs at a looser
+     line-height so four stacked lines don't read as a dense slab. */
+  .mission h2 {
+    font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.55;
+    max-width: 46ch;
+    margin-bottom: 44px;
+    text-wrap: pretty;
   }
 
-  .mission p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 18px; }
+  .mission-grid {
+    max-width: 66ch;
+  }
+
+  .mission p {
+    font-size: 1.08rem;
+    line-height: 1.75;
+    opacity: 0.85;
+    margin-bottom: 22px;
+  }
+
+  .mission p:last-child { margin-bottom: 0; }
 
   /* ---------- Pipeline ---------- */
   .pipeline-grid {
@@ -250,6 +275,10 @@
 
   /* ---------- Team ---------- */
   .team { background: var(--paper-dim); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  /* No founder cards yet, so the intro is the last element — drop the
+     48px gap it would otherwise leave before the section ends. */
+  .team .section-intro:last-child { margin-bottom: 0; max-width: 66ch; }
 
   .team-grid {
     display: grid;
@@ -296,6 +325,20 @@
   .contact-box .btn-primary {
     background: var(--yellow);
     color: var(--ink);
+  }
+
+  /* Address is written out rather than a mailto: link, to keep it off
+     scrapers. Styled as a readable address block, not a dead button. */
+  .contact-email {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--yellow);
+    border: 1.5px solid rgba(255, 216, 84, 0.45);
+    border-radius: 8px;
+    padding: 13px 24px;
+    user-select: all;
   }
 
   /* ---------- Footer ---------- */
@@ -355,9 +398,9 @@
   <section class="mission" id="mission">
     <div class="wrap">
       <div class="section-label">Our mission</div>
-      <h2> Through a public health lense, we aim to develop solutions for neglected diseases. Our focus is on developing one therapeutic, engineered to protect patients against disease across an entire viral family.</h2>
+      <h2>Through a public health lens, we aim to develop solutions for neglected diseases. Our focus is on developing one therapeutic, engineered to protect patients against disease across an entire viral family.</h2>
       <div class="mission-grid">
-        <p>Stay tuned for scientific updates :) </p>
+        <p>Stay tuned for scientific updates :)</p>
         <p>
           We're early — and building deliberately. This page will grow as
           our pipeline, team, and milestones take shape.
@@ -379,7 +422,7 @@
         <div class="pipe-card">
           <div class="dot"></div>
           <h3>Discovery</h3>
-          <p>Identifying, validating, and engineering candidates with broad cross-strain protection and high affinity/avidity </p>
+          <p>Identifying, validating, and engineering candidates with broad cross-strain protection and high affinity/avidity.</p>
         </div>
         <div class="pipe-card">
           <div class="dot"></div>
@@ -405,7 +448,6 @@
       <p class="section-intro">
         We are putting together a team of experts, focused on a positive public health impact. If you have either wet or dry lab antibody development experience, feel free to reach out at hello [at] mabsolute.bio.
       </p>
-      </div>
     </div>
   </section>
 
@@ -416,7 +458,7 @@
           <h2>Let's talk.</h2>
           <p>For partnerships, investors, or general inquiries, reach out any time.</p>
         </div>
-        <a> hello [at] mabsolute.bio</a>
+        <span class="contact-email">hello [at] mabsolute.bio</span>
       </div>
     </div>
   </section>
