@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>mAbsolute — Antibody Therapeutics</title>
 <meta name="description" content="mAbsolute is developing an antibody solution engineered to neutralize an entire viral family.">
-<link rel="icon" href="assets/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<!-- Safari probes /favicon.ico at the site root and caches it per-host,
+     largely ignoring these tags once it has an entry. The files are served
+     from the root as well as assets/, and the ?v= bust forces a re-fetch. -->
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
 <meta name="theme-color" content="#FFD854">
 <style>
   :root {
@@ -139,9 +142,12 @@
 
   .hero h1 {
     font-size: clamp(2.4rem, 5vw, 3.6rem);
-    line-height: 1.08;
-    max-width: 16ch;
+    line-height: 1.12;
+    /* 16ch forced this 64-character headline into five stacked lines.
+       A wider measure lets it settle into three. */
+    max-width: 24ch;
     margin-bottom: 24px;
+    text-wrap: balance;
   }
 
   .hero .lede {
