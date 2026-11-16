@@ -24,6 +24,10 @@
     --paper: #FBF9F5;
     --paper-dim: #F1EEE7;
     --line: rgba(39, 67, 146, 0.14);
+    /* One reading measure for body copy across every section. Set in px,
+       not ch: ch scales with each element's own font-size, so equal ch
+       values rendered at different widths and the columns never aligned. */
+    --measure: 640px;
     /* Abadi is a licensed Microsoft font, not distributable as a webfont.
        Visitors who have it installed locally (e.g. via MS Office) will see
        true Abadi; everyone else gets a close geometric-sans fallback. */
@@ -152,7 +156,7 @@
 
   .hero .lede {
     font-size: 1.15rem;
-    max-width: 52ch;
+    max-width: var(--measure);
     color: var(--ink);
     opacity: 0.82;
     margin-bottom: 40px;
@@ -205,7 +209,7 @@
 
   .section-intro {
     font-size: 1.05rem;
-    max-width: 60ch;
+    max-width: var(--measure);
     opacity: 0.8;
     margin-bottom: 48px;
   }
@@ -223,13 +227,13 @@
     font-size: clamp(1.35rem, 2.1vw, 1.75rem);
     font-weight: 500;
     line-height: 1.55;
-    max-width: 56ch;
+    max-width: var(--measure);
     margin-bottom: 44px;
     text-wrap: pretty;
   }
 
   .mission-grid {
-    max-width: 76ch;
+    max-width: var(--measure);
   }
 
   .mission p {
@@ -284,7 +288,7 @@
 
   /* No founder cards yet, so the intro is the last element — drop the
      48px gap it would otherwise leave before the section ends. */
-  .team .section-intro:last-child { margin-bottom: 0; max-width: 66ch; }
+  .team .section-intro:last-child { margin-bottom: 0; }
 
   .team-grid {
     display: grid;
